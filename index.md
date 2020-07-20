@@ -34,6 +34,8 @@ tools to facilitate a workflow around that operational model.
 - [Plant][plant] - place manually gathered evidence into the locker
 - [Prune][prune] - correctly manage the retirement of evidence
 
+The framework, fetchers & checks and associated tools are all Apache licensed,
+and open source for you and your auditors to review.
 
 [framework]: https://github.com/ComplianceAsCode/auditree-framework
 [arboretum]: https://github.com/complianceascode/auditree-arboretum
