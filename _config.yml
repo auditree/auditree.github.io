@@ -1,0 +1,15 @@
+title: Auditree
+description: |
+  Auditree is an opinionated set of tools to enable the digital transformation
+  of compliance activities. It is designed to be familiar to DevOps teams and
+  software engineers, using tools they are likely already interacting with
+  daily.
+
+  Auditree allows you to collect and verify evidence, and build up a long term
+  store of evidence in an "evidence locker". The collection of evidence is done
+  by "fetchers", the verification by "checks". These are implemented as Python
+  unit tests. The locker is backed by a git repository. Notification of issues
+  can be configured via Slack, PagerDuty, issue trackers and similar tools.
+
+github_username:  auditree
+tags: compliance, automation, python, audit, devops
