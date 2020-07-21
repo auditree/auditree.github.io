@@ -6,6 +6,11 @@ body {
     font-size: 16pt;
     text-align: center;
 }
+.container {
+
+  width: 50%;
+  margin: 0 auto;
+}
 .content {
     width: 900px;
     background-color: white;
