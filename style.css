@@ -7,11 +7,11 @@ body {
     text-align: center;
 }
 .container {
-  width: 50%;
+  width: 790px;
   margin: 0 auto;
 }
 .content {
-    width: 640px;
+    width: 790px;
     background-color: white;
     display: inline-block;
     text-align: left;
