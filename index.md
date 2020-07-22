@@ -29,16 +29,17 @@ provides a framework in which to build & run fetchers & checks, defines an
 operational model for approaching compliance activities and supplies ancillary
 tools to facilitate a workflow around that operational model.
 
-- [Auditree framework][framework] - the core of the system, responsible for managing evidence in the locker, running fetchers & checks, notification and reporting
-- [Arboretum][arboretum] - a library of open fetchers & checks for you to use & contribute to
-- [Harvest][harvest] - collate evidence over time, run reports & analysis over the contents of the locker
-- [Plant][plant] - place manually gathered evidence into the locker
-- [Prune][prune] - correctly manage the retirement of evidence
+- [Auditree framework][framework] - the core of the system, responsible for managing evidence in the locker, running fetchers & checks, notification and reporting. You can also read the [documentation][framework-docs] site.
+- [Arboretum][arboretum] - a library of open fetchers & checks for you to use & contribute to.
+- [Harvest][harvest] - collate evidence over time, run reports & analysis over the contents of the locker.
+- [Plant][plant] - place manually gathered evidence into the locker.
+- [Prune][prune] - correctly manage the retirement of evidence.
 
 The framework, fetchers & checks and associated tools are all Apache licensed,
 and open source for you and your auditors to review.
 
 [framework]: https://github.com/ComplianceAsCode/auditree-framework
+[framework-docs]: https://complianceascode.github.io/auditree-framework/
 [arboretum]: https://github.com/complianceascode/auditree-arboretum
 [harvest]: https://github.com/complianceascode/auditree-harvest
 [plant]: https://github.com/complianceascode/auditree-plant
