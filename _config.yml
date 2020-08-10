@@ -13,3 +13,4 @@ description: |
 
 github_username:  auditree
 tags: compliance, automation, python, audit, devops
+permalink: /:categories/:title.html

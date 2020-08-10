@@ -9,7 +9,7 @@
                 background-position-x: center;
                 background-attachment: fixed;
             }
-            .container > div:first-of-type{
+            body > div.container:first-of-type{
                 margin-top: 600;
                 border-top: 1px solid #eee;
                 font-size: 24pt;
@@ -20,11 +20,23 @@
         <div class="container">
             <div class="content">
                 <h1>{{site.title}}</h1>
+            </div>
+        </div>
+        {% include navigation.html %}
+        <div class="container">
+            <div class="content">
                 {{site.description | markdownify}}
             </div>
             <div class="content">
                 {{ content }}
             </div>
         </div>
+        <footer>
+            <div class="container">
+                <div class="content">
+                    <p>Copyright 2020, IBM</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
