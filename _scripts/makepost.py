@@ -15,6 +15,7 @@ title: {title}
 CATEGORY_TEMPLATE = '''---
 layout: category
 title: {title}
+permalink: /{title}
 ---'''
 
 

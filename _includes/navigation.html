@@ -12,9 +12,9 @@
                 <ul>
                     {% for category_name in names %}
                     {% if site.categories[category_name].size > 0 %}
-                    <a class="page-link" href="/{{ category_name | slugize }}">{{ category_name | capitalize}}</a>
+                    <li><a class="page-link" href="/{{ category_name | slugize }}">{{ category_name | capitalize}}</a></li>
                     {% elsif category_name == "misc." %}
-                    <a class="page-link" href="/{{ category_name | slugize }}">{{ category_name | capitalize}}</a>
+                    <li><a class="page-link" href="/{{ category_name | slugize }}">{{ category_name | capitalize}}</a></li>
                     {% endif %}
                     {% endfor %}
                 </ul>
