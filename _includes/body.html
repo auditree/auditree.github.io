@@ -1,0 +1,38 @@
+    <body>
+        <main>
+            <div id="content-wrap">
+                {% if include.index %}
+                {% unless page.nodescription %}
+                <div class="hero container">
+                    <div class="content">
+                        <h1>{{page.title | default: site.title}}</h1>
+                    </div>
+                </div>
+                {% endunless %}
+                {% endif %}
+                {% include navigation.html %}
+                {% if page.hero %}
+                <div class="hero container">
+                    <div class="content">
+                        <h1>{{page.title | default: site.title}}</h1>
+                        <p><strong>{{page.hero}}</strong></p>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="container">
+                    {% if include.index %}
+                    {% unless page.nodescription %}
+                    <div class="content">
+                        {{site.description | markdownify}}
+                    </div>
+                    {% endunless %}
+                    {% endif %}
+                    <div class="content">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+            {% include footer.html %}
+        </main>
+    </body>
+</html>
