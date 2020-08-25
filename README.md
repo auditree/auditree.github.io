@@ -15,7 +15,7 @@ You can run `jekyll serve` in the top directory of the site to serve a local cop
 
 ## Editing the layout & appearance
 
-Pages are given a layout (in `_layouts`) which may use one or more include (from `_includes`). The sites CSS is in `style.css`
+Pages are given a layout (in `_layouts`) which may use one or more include (from `_includes`). The site's CSS is in `style.css`
 
 [Jekyll]: https://jekyllrb.com/
 [Github pages]: https://pages.github.com/

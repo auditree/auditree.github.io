@@ -14,14 +14,18 @@ When designing Auditree, we deliberately constrained the architecture to only us
 
 The reason for building Auditree is to improve the scaling of our compliance efforts. We wanted engineers to be able to dip in, write a `unittest` based check & go back to their normal activities. To enable this, we built the framework, with the aim of it holding the "smarts" and the fetchers/checks only containing the logic and sufficient intelligence required to collect & evaluate evidence.
 
-We've exposed this functionality as [decorators and context managers][evidence], as well as [`Fetcher`][fetcher] and [`Check`][check] classes. Using these mean people can write their code and not worry about evidence TTL, where files reside in the locker or managing git as the framework takes care of these functions for you.
+We've exposed this functionality as decorators and context managers that can be used to [write][] and [read][] evidence, as well as [`Fetcher`][fetcher] and [`Check`][check] classes. Using these mean that people can write their code and not worry about evidence TTL, where files reside in the locker or managing git as the framework takes care of these functions for you.
+
+## The Locker
 
 ## Runner agnostic
 
-Initially we ran Auditree on Travis; we have a private instance & it required config but no new infrastructure be deployed. The environment & install is simple & portable between different runners, and we've ensured the framework is agnostic of it's running environment - we've run it in Jenkins, from cron, in Tekton. All that's required is the ability to verify that the runner has not been tampered with.
+Initially we ran Auditree on Travis; we have a private instance which required some configuration but no new infrastructure had to be deployed. The environment & install is simple & portable between different runners, and we've ensured the framework is agnostic of its running environment - we've run it in Jenkins, from cron, in Tekton as well as in Travis. All that's required is the ability to verify that the runner has not been tampered with.
 
-One thing we baked in early on is that each run is a new install. This means we can rectify issues in fetcher/check code or configuration and have the next run pick up the fix, without intervention. It also means that the ony state shared between invocations is managed via the locker, preventing any "ghosts in the machine" from changing evidence.
+One thing we baked in early on is that each run is a new install. This means we can rectify issues in fetcher/check code or configuration and have the next run pick up the fix, without intervention. It also means that the only state shared between invocations is managed via the locker, preventing any "ghosts in the machine" from changing evidence.
 
-[check]: https://github.com/ComplianceAsCode/auditree-framework/blob/main/compliance/check.py
-[evidence]: https://github.com/ComplianceAsCode/auditree-framework/blob/main/compliance/evidence.py
-[fetcher]: https://github.com/ComplianceAsCode/auditree-framework/blob/main/compliance/fetch.py
+[check]: https://complianceascode.github.io/auditree-framework/design-principles.html#compliance-checks
+[write]: https://complianceascode.github.io/auditree-framework/design-principles.html#evidence-validation
+[read]: https://complianceascode.github.io/auditree-framework/design-principles.html#id2
+[fetcher]: https://complianceascode.github.io/auditree-framework/design-principles.html#compliance-fetchers
+[locker]: https://complianceascode.github.io/auditree-framework/design-principles.html#evidence-locker
