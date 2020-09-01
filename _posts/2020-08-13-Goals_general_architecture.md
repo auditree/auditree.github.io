@@ -14,9 +14,22 @@ When designing Auditree, we deliberately constrained the architecture to only us
 
 The reason for building Auditree is to improve the scaling of our compliance efforts. We wanted engineers to be able to dip in, write a `unittest` based check & go back to their normal activities. To enable this, we built the framework, with the aim of it holding the "smarts" and the fetchers/checks only containing the logic and sufficient intelligence required to collect & evaluate evidence.
 
-We've exposed this functionality as decorators and context managers that can be used to [write][] and [read][] evidence, as well as [`Fetcher`][fetcher] and [`Check`][check] classes. Using these mean that people can write their code and not worry about evidence TTL, where files reside in the locker or managing git as the framework takes care of these functions for you.
+We've exposed this functionality as decorators and context managers that can be used to [write][] and [read][] evidence, as well as [`Fetcher`][fetcher] and [`Check`][check] classes. Using these mean that people can write their code and not worry about evidence TTL (time to live), where files reside in [the Locker](#the-locker) or managing pushing data remotely as the framework takes care of these functions for you.
 
 ## The Locker
+
+Auditree focuses on evidence. We wanted to use a long term store which:
+
+- Met familiarity goals of the project as a whole
+- Maintained record integrity & provided evidence of tampering
+- Could deliver a change history via a defined API
+- Had suitable access & permission controls
+- Was able to support a range of data formats (text based or binary)
+- Was able to meet the retention requirements associated with the durations of audits
+
+While we run a [database-as-a-service](https://cloudant.com) we quickly realised another tool was actually a better fit: Git. Git meets all our requirements; its used daily by our team, we're well versed in managing access & integrity, it has a well documented interface (with a decent [python library](https://gitpython.readthedocs.io/en/stable/)) and it's pretty permissive with regards to data it holds.
+
+What we didn't want was being tied to a single hosting platform (GitHub, GitLab...). This means the Locker is implemented as "pure git", and does not use proprietary vendor APIs. We do have notifiers and fetchers that talk to vendor APIs but the core framework does not.
 
 ## Runner agnostic
 
