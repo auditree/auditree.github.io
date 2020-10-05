@@ -2,6 +2,8 @@
 layout: post
 category: architecture
 title: Goals & general architecture
+author: Simon Metson
+author_github: drsm79
 ---
 
 When building Auditree we wanted to shift compliance problems into engineering problems. We have more people with knowledge and expertise around engineering, DevOps and automation than we do around compliance, so scaling the compliance skills we do have is essential. At the same time; tools & approaches that are familiar to our engineers is going to mean better engagement from them in addressing & supporting compliance activities.
