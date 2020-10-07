@@ -1,6 +1,6 @@
 ---
 layout: post
-category: Architecture
+category: architecture
 title: Evidence locker overview
 author: Al Finkelstein
 author_github: alfinkel
