@@ -8,8 +8,10 @@ import re
 
 POST_TEMPLATE = '''---
 layout: post
-category: {category}
+category: {category.lower()}
 title: {title}
+author: FILL ME IN
+author_github: FILL ME IN
 ---'''
 
 CATEGORY_TEMPLATE = '''---
