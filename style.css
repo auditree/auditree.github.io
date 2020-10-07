@@ -101,6 +101,14 @@ nav ul li a.active {
 main {
     padding-bottom: 50px;
 }
+p.small{
+    font-size: small;
+    color: #666666;
+}
+p.small a{
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+}
 footer{
     font-size: small;
     border-top: 1px #eee;
