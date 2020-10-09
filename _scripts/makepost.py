@@ -26,7 +26,7 @@ def main():
     p.add_argument('title')
     p.add_argument('category')
     args = p.parse_args()
-
+    args.category = args.category.lower()
     path = pathlib.Path(__file__).absolute().parents[1]
     category = path.joinpath(f'{args.category}.md')
     if not category.exists():
